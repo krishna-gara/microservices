@@ -1,11 +1,7 @@
 FROM java:latest
 
-ADD MessageStreamMicroServices_v2/createSwiftMessage-impl/target/universal /tmp/
+ADD createSwiftMessage-impl/target/universal /tmp/
 RUN unzip /tmp/createswiftmessage-impl-1.0-SNAPSHOT.zip
 ENTRYPOINT ["createswiftmessage-impl-1.0-SNAPSHOT/bin/createswiftmessage-impl"]
-
-ADD MessageStreamMicroServices_v2/readSwiftMessage-impl/target/universal /tmp/
-RUN unzip /tmp/readswiftmessage-impl-1.0-SNAPSHOT.zip
-ENTRYPOINT ["readswiftmessage-impl-1.0-SNAPSHOT/bin/readswiftmessage-impl"]
 
 CMD []
